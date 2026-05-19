@@ -1,3 +1,5 @@
+my work
+
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/AnR2QgvN)
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=22925822&assignment_repo_type=AssignmentRepo)
 # 🌐 IoT Elective Project 2026
@@ -28,8 +30,8 @@
 
 ## 📌 Project Overview
 
-**Project Title:** `[Your Project Title Here]`  
-**Group Name / Number:** `[Group Name / Number]`  
+**Project Title:** `Smart Attendance System`  
+**Group Name / Number:** `Fantastic Four`  
 **Presentation Date:** 20 May 2026 — 10:00 to 15:00 (SAST)
 
 ---
@@ -58,85 +60,155 @@
 
 ---
 
-## 👥 Group Members
+# 👥 Group Members
 
 | Student Name | Student Number | Role / Responsibility |
 |---|---|---|
-| [Name Surname] | [Student No.] | [e.g. Hardware Lead] |
-| [Name Surname] | [Student No.] | [e.g. Software Lead] |
-| [Name Surname] | [Student No.] | [e.g. Documentation Lead] |
-| [Name Surname] | [Student No.] | [e.g. Testing Lead] |
+| Redah Gamieldien | 222641681 | Testing Lead |
+| Lyle Solomons | 230123872 | Software Lead |
+| Qaasim Isaacs | 222544422 | Hardware Lead |
+| Ethan Williams | 221454780 | Documentation Lead |
 
 ---
 
 ## 💡 Project Idea & Problem Statement
+## Problem Statement
 
-### Problem Statement
-> _Describe the problem your IoT solution addresses. Be specific._
+Currently, student identification cards are mainly used only to access campus facilities. However, classroom attendance is still recorded manually using attendance sheets.
 
-### Proposed Solution
-> _Explain how your IoT device/system solves the problem._
+This creates several problems:
 
-### Objectives
-- [ ] Objective 1
-- [ ] Objective 2
-- [ ] Objective 3
+- Attendance sheets can be lost or damaged  
+- Students may sign attendance for absent friends  
+- Manual attendance recording is time consuming  
+- Attendance tracking becomes unreliable and prone to human error  
 
 ---
 
-## 🏗️ System Architecture & Design
+## Proposed Solution
 
-![System Architecture Diagram](images/architecture_diagram.png)
+We developed a **Smart Attendance System** using RFID and ESP32 with real-time monitoring.
 
-### Design Decisions
-> _Explain the key design decisions your group made._
+### System Flow:
+- RFID card is scanned
+- ESP32 reads UID
+- Attendance is recorded automatically
+- LED + buzzer provide feedback
+- Data is sent via Wi-Fi
+- GitHub stores project documentation
 
+---
+
+## Objectives
+
+1. Automate attendance tracking  
+2. Improve accuracy and efficiency  
+3. Prevent proxy attendance  
+4. Demonstrate IoT application in education  
+
+---
+
+
+# 🏗️ System Architecture & Design
+
+![System Architecture](image/System_Architecture.png)
+
+## Design Decisions
+
+- ESP32 chosen for Wi-Fi + processing power  
+- MFRC522 used for RFID scanning  
+- SPI communication ensures fast data transfer  
+- LEDs + buzzer for feedback system  
+- GitHub for version control  
+- Designed for scalability  
 ---
 
 ## 🔧 Hardware Components
 
 | Component | Description | Quantity | Purpose |
 |---|---|---|---|
-| [e.g. Arduino Uno] | [Brief description] | [1] | [e.g. Main microcontroller] |
-| [e.g. DHT11 Sensor] | [Brief description] | [1] | [e.g. Temperature & humidity sensing] |
-| [e.g. ESP8266 Wi-Fi Module] | [Brief description] | [1] | [e.g. Wireless connectivity] |
-| [Add more rows as needed] | | | |
+| ESP32 | Microcontroller | 1 | Main controller |
+| MFRC522 | RFID reader | 1 | Reads student cards |
+| RFID Tags | Student cards | Multiple | Identification |
+| Green LED | Indicator | 1 | Success signal |
+| Red LED | Indicator | 1 | Failure signal |
+| Buzzer | Sound output | 1 | Audio feedback |
+| 220Ω Resistors | Protection | 2 | LED safety |
+| Jumper Wires | Connections | Multiple | Wiring |
+| Breadboard | Prototype | 1 | Testing |
+| Enclosure | Housing | 1 | Final casing |
 
 ---
 
 ## 💻 Software & Technologies
 
-| Tool / Platform | Purpose |
+| Tool | Purpose |
 |---|---|
-| [e.g. Arduino IDE] | [Firmware development] |
-| [e.g. MQTT / Node-RED] | [Data communication / dashboard] |
-| [e.g. GitHub] | [Version control & documentation] |
-| [e.g. Fritzing] | [Circuit design] |
+| Arduino IDE | Programming ESP32 |
+| GitHub | Version control |
+| Wokwi | Simulation |
+| C++ | Firmware language |
+| ESP32 Wi-Fi Library | Connectivity |
+| MFRC522 Library | RFID communication |
 
 ---
 
 ## 🔌 Circuit Diagram / Wiring
 
-![Circuit Diagram](images/circuit_diagram.png)
+![Circuit Diagram](image/Circuit_Diagram.jpeg)
 
-| Component Pin | Microcontroller Pin | Notes |
-|---|---|---|
-| [e.g. DHT11 DATA] | [e.g. D2] | [Pull-up resistor required] |
-| [e.g. LED +] | [e.g. D13] | [220Ω resistor in series] |
-
+| Component Pin | ESP32 Pin |
+|---|---|
+| SDA | GPIO 5 |
+| SCK | GPIO 18 |
+| MOSI | GPIO 23 |
+| MISO | GPIO 19 |
+| RST | GPIO 22 |
+| VCC | 3.3V |
+| GND | GND |
+| Green LED | GPIO 13 |
+| Red LED | GPIO 12 |
+| Buzzer | GPIO 14 |
 ---
 
 ## 🏭 Build Process (with photos)
 
-### Step 1: [Step Title]
-> _Description of what was done._
+## Step 1: Install Esp32 to breadboard
+![Step 1](image/1.jpeg)
 
-![Step 1 Photo](images/build_step1.jpg)
+## Step 2:  Install MFRC522 RFID Scanner to the breadboard
+![Step 2](image/2.jpeg)
 
-### Step 2: [Step Title]
-> _Description of what was done._
+## Step 3:Connect Esp32 to MFRC522 RFID scanner
+![Step 3](image/3.jpeg)
 
-![Step 2 Photo](images/build_step2.jpg)
+## Step 4: Install the Green LED with the appropriate Ohms resistor to the breadboard
+![Step 4](image/4.jpeg)
+
+## Step 5: Install the Red LED with the appropriate Ohms resistor to the breadboard
+![Step 5](image/5.jpeg)
+
+## Step 6: Mount the Buzzer into the breadboard
+![Step 6](image/6.jpeg)
+
+## Step 7: Set up database 
+![Step 7](image/7.jpeg)
+
+## Step 8: Ensure Database is capable of logging data
+![Step 8](image/8.jpeg)
+
+## Step 9: Basic UI to test if the front-end interacts with the backend
+![Step 9](image/9.jpeg)
+
+## Step 10: Final UI Dashboard
+![Step 10](image/10.jpeg)
+
+## Step 11: Housing Unit Components
+![Step 11](image/11.jpeg)
+
+## Step 12: Complete Housing Unit Assembly
+![Step 12](image/12.jpeg)
+![Step 12](image/13.jpeg)
 
 ---
 
@@ -167,25 +239,32 @@ void loop() {
 
 ## 🧪 Testing & Results
 
-| Test # | Description | Expected Result | Actual Result | Pass/Fail |
+| Test # | Description | Expected | Actual | Status |
 |---|---|---|---|---|
-| 1 | [e.g. Sensor reads temperature] | [e.g. ±2°C accuracy] | [e.g. ±1.5°C] | ✅ Pass |
-| 2 | [e.g. Wi-Fi transmission] | [e.g. Every 10s] | | |
-
+| 1 | ESP32 startup | Works | Works | ✅ |
+| 2 | RFID scan | Detect card | Works | ✅ |
+| 3 | UID transfer | Correct | Correct | ✅ |
+| 4 | Green LED | On success | Works | ✅ |
+| 5 | Red LED | On fail | Works | ✅ |
+| 6 | Buzzer | Sound | Fixed | ✅ |
+| 7 | SPI | Stable | Stable | ✅ |
 ---
 
 ## ⚠️ Challenges & Solutions
 
-| Challenge Encountered | Solution Applied |
+| Challenge | Solution |
 |---|---|
-| [e.g. Wi-Fi connection drops] | [e.g. Added reconnect logic] |
-| [e.g. Noisy sensor readings] | [e.g. Applied moving average filter] |
+| ESP32 crash | Fixed code |
+| RFID issues | Fixed wiring |
+| LED errors | Correct GPIO |
+| Buzzer weak | Fixed polarity |
+| Upload error | Fixed COM port |
 
 ---
 
 ## 🎥 Project Demonstration
 
-- 📹 **Demo Video:** [Insert link here]
+- 📹 **Demo Video:** [Demo Video](Video/Live_Demonstration.mp4)
 - 📊 **Presentation Slides:** [Insert link here]
 - 🔗 **Live Dashboard (if applicable):** [Insert link here]
 
@@ -193,9 +272,10 @@ void loop() {
 
 ## 📚 References
 
-1. [Reference Title](https://link-to-reference.com) — _Brief description_
-2. [Reference Title](https://link-to-reference.com) — _Brief description_
-
+1. ESP32 Docs – https://docs.espressif.com/projects/esp-idf/en/latest/esp32/  
+2. MFRC522 Library – https://github.com/miguelbalboa/rfid  
+3. Arduino IDE – https://www.arduino.cc/en/software  
+4. Wokwi – https://wokwi.com/
 ---
 
 ## 📊 Assessment Rubric
