@@ -280,7 +280,7 @@ void loop() {
 ## 🎥 Project Demonstration
 
 - 📹 **Demo Video:** [Demo Video](Video/Live_Demonstration.mp4)
-- 📊 **Presentation Slides:** [Insert link here]
+- 📊 **Presentation Slides:** [PowerPoint Presentation](./Fantastic_Four_SAS.pptx)
 - 🔗 **Live Dashboard (if applicable):** [Insert link here]
 
 ---
