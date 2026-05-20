@@ -214,28 +214,41 @@ We developed a **Smart Attendance System** using RFID and ESP32 with real-time m
 
 ---
 
-## 🖥️ Code Documentation
+# 🖥️ Code Documentation
 
-### Main Firmware (e.g., `main.ino`)
+## Main Firmware (`main.ino`)
 
 ```cpp
 void setup() {
-  Serial.begin(9600);
-  // Initialize sensors and pins here
+  // Initializes RFID reader, WiFi connection,
+  // Firebase communication, LEDs, buzzer,
+  // and NTP time synchronization.
 }
 
 void loop() {
-  // Main logic here
+  // Continuously scans RFID cards,
+  // validates student data,
+  // checks active class session,
+  // and logs attendance to Firebase.
 }
 ```
 
-### Key Functions
+---
+
+# Key Functions
 
 | Function Name | Description |
 |---|---|
-| `setup()` | Initializes hardware peripherals and serial communication |
-| `loop()` | Main execution loop |
-| `[yourFunction()]` | [Describe it] |
+| `setup()` | Initializes hardware, WiFi, RFID, and Firebase |
+| `loop()` | Handles RFID scanning and attendance logging |
+| `getTimeStamp()` | Retrieves current date and time |
+| `instantBeep()` | Plays short buzzer sound |
+| `accessGranted()` | Indicates successful scan |
+| `accessDenied()` | Indicates failed scan |
+| `http.GET()` | Retrieves data from Firebase |
+| `http.POST()` | Sends attendance data to Firebase |
+| `deserializeJson()` | Parses Firebase JSON data |
+| `rfid.PICC_HaltA()` | Stops RFID communication after scan |
 
 ---
 
