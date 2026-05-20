@@ -201,8 +201,10 @@ We developed a **Smart Attendance System** using RFID and ESP32 with real-time m
 ![Step 9](image/9.jpeg)
 
 ## Step 10: Final UI Dashboard
-![Step 10](image/10.jpeg)
-
+![Step 10](image/10.1.jpeg)
+![Step 10](image/10.2.jpeg)
+![Step 10](image/10.3.jpeg)
+![Step 10](image/10.4.jpeg)
 ## Step 11: Housing Unit Components
 ![Step 11](image/11.jpeg)
 
